@@ -1,0 +1,783 @@
+[
+    {
+        "id": "q99-0",
+        "type": "MCQ",
+        "question": "The stereographic projection below shows the principal stress axes and fault planes. The projection represents a ________.",
+        "options": [
+            {
+                "label": "a",
+                "text": "Normal Fault"
+            },
+            {
+                "label": "b",
+                "text": "Sinistral Fault"
+            },
+            {
+                "label": "c",
+                "text": "Dextral Fault"
+            },
+            {
+                "label": "d",
+                "text": "Reverse Fault"
+            }
+        ],
+        "image_url": "question_images\\q99-0.jpg",
+        "image_caption": "The stereographic projection",
+        "appeared_in_year": "2013"
+    },
+    {
+        "id": "q146-0",
+        "type": "MCQ",
+        "question": "Knick points indicate changes in the (Carry two marks each)",
+        "options": [
+            {
+                "label": "a",
+                "text": "Attitude of beds"
+            },
+            {
+                "label": "b",
+                "text": "Attitude of joints"
+            },
+            {
+                "label": "c",
+                "text": "Strike of a fault"
+            },
+            {
+                "label": "d",
+                "text": "Stream gradient"
+            }
+        ],
+        "appeared_in_year": "2014"
+    },
+    {
+        "id": "q86-0",
+        "type": "MCQ",
+        "question": "In the stereographic projection, 1,2 and 3 represent poles of three planes. Choose the correct Combination of statements from the following.",
+        "options": [
+            {
+                "label": "a",
+                "text": "The plane corresponding to 2 is striking E-W and the plane corresponding to 3 is inclined."
+            },
+            {
+                "label": "b",
+                "text": "The plane corresponding to 1 is horizontal and the plane corresponding to 2 is inclined."
+            },
+            {
+                "label": "c",
+                "text": "The plane corresponding to 1 is striking N-S and the plane corresponding to 2 is horizontal."
+            },
+            {
+                "label": "d",
+                "text": "The plane corresponding to 2 is vertical and the plane corresponding to 3 is striking E-W."
+            }
+        ],
+        "image_url": "question_images\\1594184387749.jpg",
+        "image_caption": "Stereographic projection, 1,2 and 3 represent poles of thre …",
+        "appeared_in_year": "2013"
+    },
+    {
+        "id": "q121-0",
+        "type": "MCQ",
+        "question": "Horizontal slickensides are observed on the surface of a vertical fault. What is the type of fault? (Carry one mark each)",
+        "options": [
+            {
+                "label": "a",
+                "text": "Reverse fault"
+            },
+            {
+                "label": "b",
+                "text": "Strike-slip fault"
+            },
+            {
+                "label": "c",
+                "text": "Normal fault"
+            },
+            {
+                "label": "d",
+                "text": "Oblique fault"
+            }
+        ],
+        "appeared_in_year": "2014"
+    },
+    {
+        "id": "q2-0",
+        "type": "MCQ",
+        "question": "A sandstone bed dipping30°has an outcrop width of 20 m in a flat terrain. What is the true thickness (in m) of the bed?",
+        "options": [
+            {
+                "label": "a",
+                "text": "5"
+            },
+            {
+                "label": "b",
+                "text": "30"
+            },
+            {
+                "label": "c",
+                "text": "10"
+            },
+            {
+                "label": "d",
+                "text": "20"
+            }
+        ]
+    },
+    {
+        "id": "q20-0",
+        "type": "MCQ",
+        "question": "A horizontally bedded sandstone outcrop exhibits planar cross-beds at a number of places. The dip directions of the foresets of cross-beds at these locations are:N350°,N17°,N355°,N355°,N15°,N360°,N350°,N13°,N350°,N355°. Find the mean palaeocurrent direction.",
+        "options": [
+            {
+                "label": "a",
+                "text": "N 350 °"
+            },
+            {
+                "label": "b",
+                "text": "N 360 °"
+            },
+            {
+                "label": "c",
+                "text": "N 355 °"
+            },
+            {
+                "label": "d",
+                "text": "N 15 °"
+            }
+        ]
+    },
+    {
+        "id": "q18-0",
+        "type": "MCQ",
+        "question": "Statements\nTransposition foliation is an indication of superposed foldingStratigraphic information is retained in transposition structuresTransposition foliation develops parallel to axial plane of tight foldsFold closures can be well identified in transposition structures",
+        "options": [
+            {
+                "label": "a",
+                "text": "Only statement Ⅲ is true."
+            },
+            {
+                "label": "b",
+                "text": "Statement Ⅰ, Ⅲ, & Ⅳ are true."
+            },
+            {
+                "label": "c",
+                "text": "Statement Ⅱ, Ⅲ, & Ⅳ are true."
+            },
+            {
+                "label": "d",
+                "text": "All of the statements are true."
+            }
+        ]
+    },
+    {
+        "id": "q120-0",
+        "type": "MCQ",
+        "question": "Structure contours of a bedding plane at 100 m interval are spaced in such a manner that the horizontal equivalent is also 100m. The dip of the bedding plane is ________.\n(Carry one mark each)",
+        "options": [
+            {
+                "label": "a",
+                "text": "30 °"
+            },
+            {
+                "label": "b",
+                "text": "60 °"
+            },
+            {
+                "label": "c",
+                "text": "90 °"
+            },
+            {
+                "label": "d",
+                "text": "45 °"
+            }
+        ],
+        "appeared_in_year": "2014"
+    },
+    {
+        "id": "q68-0",
+        "type": "MCQ",
+        "question": "Which one of the following is the correct statement?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Dehydration of sub ducting slab induces mantle melting"
+            },
+            {
+                "label": "b",
+                "text": "Accretionary wedge is part of the foreland basin"
+            },
+            {
+                "label": "c",
+                "text": "Back arc basin represent a convergent Regime"
+            },
+            {
+                "label": "d",
+                "text": "Spreading ridge is a major zone of metamorphism"
+            }
+        ],
+        "appeared_in_year": "2013"
+    },
+    {
+        "id": "q37-0",
+        "type": "MCQ",
+        "question": "If the rake of net slip of an inclined fault is 90°, the fault is",
+        "options": [
+            {
+                "label": "a",
+                "text": "Oblique-slip fault"
+            },
+            {
+                "label": "b",
+                "text": "Dip-slip fault"
+            },
+            {
+                "label": "c",
+                "text": "Strike-slip fault"
+            },
+            {
+                "label": "d",
+                "text": "Trans current fault"
+            }
+        ]
+    },
+    {
+        "id": "q193-0",
+        "type": "MCQ",
+        "question": "Which one of the following lineations can be observed on a foliation with an attitude 210,40 NW? °°",
+        "options": [
+            {
+                "label": "a",
+                "text": "40 ⇾ 350 °°"
+            },
+            {
+                "label": "b",
+                "text": "40 ⇾ 300°°"
+            },
+            {
+                "label": "c",
+                "text": "40 ⇾ 040°°"
+            },
+            {
+                "label": "d",
+                "text": "40 ⇾ 220 °°"
+            }
+        ],
+        "appeared_in_year": "2024"
+    },
+    {
+        "id": "q264-0",
+        "type": "MCQ",
+        "question": "The given outcrop pattern on a flat topography represents",
+        "options": [
+            {
+                "label": "a",
+                "text": "plunging antiform."
+            },
+            {
+                "label": "b",
+                "text": "horizontal fold."
+            },
+            {
+                "label": "c",
+                "text": "synform with axial depression."
+            },
+            {
+                "label": "d",
+                "text": "antiform with axial culmination."
+            }
+        ],
+        "image_caption": "Illustration: Geology 2023 Questions",
+        "appeared_in_year": "2023"
+    },
+    {
+        "id": "q259-0",
+        "type": "MCQ",
+        "question": "Which of the following is/are slope stabilization method (s)?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Bolting"
+            },
+            {
+                "label": "b",
+                "text": "Application of shotcrete"
+            },
+            {
+                "label": "c",
+                "text": "Use of impression packer"
+            },
+            {
+                "label": "d",
+                "text": "Use of geogrid"
+            }
+        ],
+        "appeared_in_year": "2023"
+    },
+    {
+        "id": "q206-0",
+        "type": "MCQ",
+        "question": "Which of the following structures is/are associated with duplexes in fold – thrust belts?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Horses"
+            },
+            {
+                "label": "b",
+                "text": "Roof thrust"
+            },
+            {
+                "label": "c",
+                "text": "Imbricate fan"
+            },
+            {
+                "label": "d",
+                "text": "Floor thrust"
+            }
+        ],
+        "appeared_in_year": "2024"
+    },
+    {
+        "id": "q227-0",
+        "type": "MCQ",
+        "question": "Which of the following statements is/are CORRECT for the M-plane of any fault?",
+        "options": [
+            {
+                "label": "a",
+                "text": "M-plane pole of a fault is perpendicular to the slickenline on the fault plane"
+            },
+            {
+                "label": "b",
+                "text": "M-plane pole of a fault is parallel to the slickenline on the fault plane"
+            },
+            {
+                "label": "c",
+                "text": "M-plane pole of a fault is perpendicular to the pole to the fault plane"
+            },
+            {
+                "label": "d",
+                "text": "M-plane pole of a fault is located on the fault plane"
+            }
+        ],
+        "appeared_in_year": "2024"
+    },
+    {
+        "id": "q279-0",
+        "type": "Numeric Answer",
+        "question": "At a certain depth in the crust, the maximum and minimum principal compressive stresses are 150 MPa and 75 MPa, respectively, which lead to normal faulting. If the average density of the crust is 2700 kg/m3, the crustal depth of fracture initiation according to Anderson՚s theory of faulting is ________ km. (g= 10 m/s2) [round off to one decimal place]",
+        "options": [],
+        "appeared_in_year": "2023"
+    },
+    {
+        "id": "q252-0",
+        "type": "MCQ",
+        "question": "The dip and dip direction of the lee side of a straight crested ripple on modern sediments are found to be 15 andN10W, respectively. Considering unidirectional water movement, the flow direction is towards °°",
+        "options": [
+            {
+                "label": "a",
+                "text": "N 10 W °"
+            },
+            {
+                "label": "b",
+                "text": "S 10 E °"
+            },
+            {
+                "label": "c",
+                "text": "S 70 W °"
+            },
+            {
+                "label": "d",
+                "text": "N 70 E °"
+            }
+        ],
+        "appeared_in_year": "2023"
+    },
+    {
+        "id": "q217-0",
+        "type": "MCQ",
+        "question": "In the fold profile section shown in the figure, 1 and 3 are the oldest and the youngest stratigraphic units, respectively.\nWhich one of the following fold descriptions CORRECTLY matches the asymmetric fold shown in the given figure?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Antiform facing east"
+            },
+            {
+                "label": "b",
+                "text": "Synform facing east"
+            },
+            {
+                "label": "c",
+                "text": "Antiform facing west"
+            },
+            {
+                "label": "d",
+                "text": "Synform facing west"
+            }
+        ],
+        "image_url": "question_images\\q217-0.jpg",
+        "image_caption": "Illustration: Geology Questions 2024",
+        "appeared_in_year": "2024"
+    },
+    {
+        "id": "q291-0",
+        "type": "MCQ",
+        "question": "Consider two intersecting, north-easterly striking and south-easterly dipping dikesY1andY2, which are exposed on an east-west trending vertical wall of a granite (X) quarry as shown below. (2 Marks)\nThe angle that the dikes make with the horizontal on the quarry wall is",
+        "options": [
+            {
+                "label": "a",
+                "text": "attitude of foliation"
+            },
+            {
+                "label": "b",
+                "text": "rake"
+            },
+            {
+                "label": "c",
+                "text": "apparent dip"
+            },
+            {
+                "label": "d",
+                "text": "true dip"
+            }
+        ],
+        "image_caption": "Illustration: Geology 2025 Solutions",
+        "appeared_in_year": "2025"
+    },
+    {
+        "id": "q307-0",
+        "type": "MCQ",
+        "question": "Which one of the following statements correctly describes the features in the geological map?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Syncline consisting of sedimentary rocks and basalt"
+            },
+            {
+                "label": "b",
+                "text": "Steep south-dipping sedimentary beds above a basalt basement"
+            },
+            {
+                "label": "c",
+                "text": "Horizontal sedimentary beds above a basalt basement"
+            },
+            {
+                "label": "d",
+                "text": "Anticline consisting of sedimentary rocks and basalt"
+            }
+        ],
+        "image_caption": "Illustration: Geology 2025 Solutions",
+        "appeared_in_year": "2025"
+    },
+    {
+        "id": "q284-0",
+        "type": "MCQ",
+        "question": "A type of fold which is relatively sharp and angular at its synformal and antiformal hinges is known as",
+        "options": [
+            {
+                "label": "a",
+                "text": "Dome"
+            },
+            {
+                "label": "b",
+                "text": "Drag fold"
+            },
+            {
+                "label": "c",
+                "text": "Fan fold"
+            },
+            {
+                "label": "d",
+                "text": "Chevron fold"
+            }
+        ],
+        "appeared_in_year": "2025"
+    },
+    {
+        "id": "q322-0",
+        "type": "MCQ",
+        "question": "The units A to H marked on the figure represent different rock formations. Select the option that describes the chronological sequence from old to young. (2 Marks)",
+        "options": [
+            {
+                "label": "a",
+                "text": "F, E, D, G, C, H, B, A"
+            },
+            {
+                "label": "b",
+                "text": "F, E, D, G, C, B, A, H"
+            },
+            {
+                "label": "c",
+                "text": "F, E, D, H, G, C, B, A"
+            },
+            {
+                "label": "d",
+                "text": "F, E, D, C, B, A, G, H"
+            }
+        ],
+        "image_url": "question_images\\q322-0.jpg",
+        "image_caption": "Illustration: Geology 2025 Solutions",
+        "appeared_in_year": "2025"
+    },
+    {
+        "id": "q333-0",
+        "type": "Numeric Answer",
+        "question": "On a normal fault plane dipping 60Otowards east, the measured heave and throw are 5 m and 12 m, respectively. If the strike-slip component of the fault is 13 m, the magnitude of true displacement of the fault is ________ m. (Round off to one decimal place) (2 Marks)",
+        "options": [],
+        "appeared_in_year": "2025"
+    },
+    {
+        "id": "q459-hz3",
+        "type": "MCQ",
+        "question": "Which of the following fold is associated with the magmatic activity?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Box fold"
+            },
+            {
+                "label": "b",
+                "text": "Diapiric fold"
+            },
+            {
+                "label": "c",
+                "text": "Synclinorium"
+            },
+            {
+                "label": "d",
+                "text": "Anticlinorium"
+            }
+        ]
+    },
+    {
+        "id": "q485-hz3",
+        "type": "MCQ",
+        "question": "Which among the following folds develop within the body of weaker rocks?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Viscous folds"
+            },
+            {
+                "label": "b",
+                "text": "Internal folds"
+            },
+            {
+                "label": "c",
+                "text": "Monocline"
+            },
+            {
+                "label": "d",
+                "text": "Drag folds"
+            }
+        ]
+    },
+    {
+        "id": "q724-hz3",
+        "type": "Match the Following",
+        "question": "Match the terms in two columns given below\n\nList-Ⅰ (Column I):\n(A) Syncline\n(B) Anticline\n(C) Antiform\n(D) Synform\n\nList-Ⅰ (Column II):\n(I) Fold closing upward and dip away from the hinge line.\n(II) Fold closing downward and limps dip toward the hinge line.\n(III) Fold has the oldest unit of the folded sequence in the core.\n(IV) Fold has the youngest unit of the folded sequence in the core.",
+        "options": [
+            {
+                "label": "a",
+                "text": "(IV) | (I) | (III) | (II)"
+            },
+            {
+                "label": "b",
+                "text": "(II) | (III) | (IV) | (I)"
+            },
+            {
+                "label": "c",
+                "text": "(IV) | (III) | (I) | (II)"
+            },
+            {
+                "label": "d",
+                "text": "(III) | (II) | (IV) | (I)"
+            }
+        ]
+    },
+    {
+        "id": "q964-hz3",
+        "type": "MCQ",
+        "question": "On a given fault plane, the magnitude of the net slip vector is … the magnitude of the separation vector. (January)",
+        "options": [
+            {
+                "label": "a",
+                "text": "equal to"
+            },
+            {
+                "label": "b",
+                "text": "greater than or equal to"
+            },
+            {
+                "label": "c",
+                "text": "greater than"
+            },
+            {
+                "label": "d",
+                "text": "less than or equal to"
+            }
+        ],
+        "appeared_in_year": "2022"
+    },
+    {
+        "id": "q144-hz3",
+        "type": "MCQ",
+        "question": "The rate of sediment accumulation is minimum at: (June)",
+        "options": [
+            {
+                "label": "a",
+                "text": "Continental rises"
+            },
+            {
+                "label": "b",
+                "text": "Continental slopes"
+            },
+            {
+                "label": "c",
+                "text": "Continental shelves"
+            },
+            {
+                "label": "d",
+                "text": "Deep-ocean floor"
+            }
+        ],
+        "appeared_in_year": "2015"
+    },
+    {
+        "id": "q477-hz3",
+        "type": "MCQ",
+        "question": "Which among the following type of fault is observed in both the continental and the oceanic environment?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Dip fault"
+            },
+            {
+                "label": "b",
+                "text": "Strike-slip fault"
+            },
+            {
+                "label": "c",
+                "text": "Oblique fault"
+            },
+            {
+                "label": "d",
+                "text": "Wrench fault"
+            }
+        ]
+    },
+    {
+        "id": "q468-hz3",
+        "type": "MCQ",
+        "question": "Which among the following depicts localized warping?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Monocline"
+            },
+            {
+                "label": "b",
+                "text": "Drag fold"
+            },
+            {
+                "label": "c",
+                "text": "Homocline"
+            },
+            {
+                "label": "d",
+                "text": "Dome"
+            }
+        ]
+    },
+    {
+        "id": "q726-hz3",
+        "type": "MCQ",
+        "question": "Gap in time represented by the unconformity is called________",
+        "options": [
+            {
+                "label": "a",
+                "text": "Hiatus"
+            },
+            {
+                "label": "b",
+                "text": "Hade"
+            },
+            {
+                "label": "c",
+                "text": "Throw"
+            },
+            {
+                "label": "d",
+                "text": "Heave"
+            }
+        ]
+    },
+    {
+        "id": "q644-hz3",
+        "type": "MCQ",
+        "question": "A grain supported rock with greater than 10% mud is called",
+        "options": [
+            {
+                "label": "a",
+                "text": "Grainstone"
+            },
+            {
+                "label": "b",
+                "text": "Wackestone"
+            },
+            {
+                "label": "c",
+                "text": "Packstone"
+            },
+            {
+                "label": "d",
+                "text": "Mudstone"
+            }
+        ]
+    },
+    {
+        "id": "q1064-hz3",
+        "type": "MCQ",
+        "question": "Foliations are generally ________ plane of the strain ellipsoid? (January)",
+        "options": [
+            {
+                "label": "a",
+                "text": "Parallel to the YZ"
+            },
+            {
+                "label": "b",
+                "text": "Oblique to the XY"
+            },
+            {
+                "label": "c",
+                "text": "Parallel to the XZ"
+            },
+            {
+                "label": "d",
+                "text": "Parallel to the XY"
+            }
+        ],
+        "appeared_in_year": "2022"
+    },
+    {
+        "id": "q708-hz3",
+        "type": "MCQ",
+        "question": "Curvature of outer arc and inner arc of 1B fold is________",
+        "options": [
+            {
+                "label": "a",
+                "text": "Outer arc < Inner arc"
+            },
+            {
+                "label": "b",
+                "text": "Outer arc = Inner arc"
+            },
+            {
+                "label": "c",
+                "text": "Outer arc > Inner arc"
+            },
+            {
+                "label": "d",
+                "text": "None of the above."
+            }
+        ]
+    }
+]

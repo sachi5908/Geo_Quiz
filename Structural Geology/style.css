@@ -1,0 +1,534 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Add for better readability */
+}
+
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.exam-title {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.timer {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.exam-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.quiz-content {
+    display: flex;
+}
+
+.results-content {
+    padding: 40px;
+    text-align: center;
+}
+
+.results-header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.results-header h2 {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+.results-item {
+    text-align: left;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.results-item .question-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.results-item p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.results-item strong {
+    color: #000;
+}
+
+.question-pane {
+    flex: 3;
+    padding: 40px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px; /* Add gap for wrapped items */
+}
+
+.question-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.question-meta {
+    font-size: 0.9em;
+    color: #666;
+    background-color: #f0f2f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevent ugly wrapping */
+}
+
+.question-section p {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.question-image-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.question-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.question-caption {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.status-pane {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 30px;
+    min-width: 280px; /* Give it a min-width to prevent squishing */
+}
+
+.status-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center; /* Center legend items */
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+}
+
+.legend-answered { background-color: #5cb85c; }
+.legend-not-answered { background-color: #f0ad4e; }
+.legend-visited { background-color: #ccc; }
+
+.status-pane h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.quiz-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-button-palette {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    display: flex; /* center number */
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button-palette:hover {
+    transform: scale(1.05);
+}
+
+.nav-button-palette.visited { background-color: #f0ad4e; color: #fff; }
+.nav-button-palette.answered { background-color: #5cb85c; color: #fff; }
+.nav-button-palette.active { background-color: #007bff; color: white; border-color: #007bff; }
+
+
+.options-list {
+    list-style: none;
+    padding: 0;
+}
+
+.option-item {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.option-item:hover {
+    background-color: #e9f5ff;
+    border-color: #8bb9ff;
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    flex-shrink: 0;
+}
+
+.numeric-input {
+    padding: 12px;
+    font-size: 1.1em;
+    width: 100%; /* Make it full width of its container */
+    max-width: 250px; /* but not too wide */
+    box-sizing: border-box; /* Include padding in width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.question-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 15px; /* Add gap */
+}
+
+.question-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.question-nav .nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.question-nav .nav-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.question-nav .nav-button:disabled {
+    background-color: #a0cffc;
+    cursor: not-allowed;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 10px; /* Add gap between buttons */
+}
+
+.action-buttons .action-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s, filter 0.3s;
+}
+
+.action-buttons .action-button:hover {
+    filter: brightness(0.9);
+}
+
+#clear-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.submit-btn {
+    background-color: #5cb85c;
+    color: white;
+}
+.submit-btn:hover { background-color: #4a934a; }
+
+.retake-btn {
+    background-color: #f0ad4e;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1em;
+}
+
+.calc-btn {
+    background-color: #6c757d;
+    color: white;
+}
+.calc-btn:hover { background-color: #5a6268; }
+
+.result-correct { color: #28a745; font-weight: bold; }
+.result-incorrect { color: #dc3545; font-weight: bold; }
+.hidden { display: none !important; }
+
+/* Styles for Match the Following Table */
+.match-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 1em;
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    display: block; /* Required for overflow-x to work on tables */
+}
+
+.match-table th, 
+.match-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.match-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+/* Style for image fallback link */
+.image-fallback-link {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #8a6d3b;
+    text-align: center;
+}
+
+/* Style for "View Solution" Button */
+.solution-btn {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.solution-btn:hover {
+    background-color: #5a2d9e;
+}
+
+/* Style for on-page solution container */
+.solution-container {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f0f8ff; 
+    border-left: 5px solid #007bff;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.7;
+    font-size: 1.05em;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styles for Solution Sections */
+.solution-container h3 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.solution-container h3:first-child {
+    margin-top: 0;
+}
+
+.solution-container hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* --- Responsive Design --- */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+    .quiz-content {
+        flex-direction: column; /* Stack panes vertically */
+    }
+
+    .question-pane {
+        border-right: none; /* Remove side border */
+        border-bottom: 1px solid #e0e0e0; /* Add bottom border */
+    }
+
+    .status-pane {
+        min-width: auto; /* Reset min-width */
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+    .exam-container {
+        margin: 10px; /* Reduce margin */
+        border-radius: 0; /* Full-width on mobile */
+    }
+
+    .question-pane, .status-pane, .results-content {
+        padding: 20px; /* Reduce padding */
+    }
+
+    .exam-header {
+        padding: 10px 15px;
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .exam-title {
+        font-size: 1.2em;
+    }
+    
+    .timer {
+        font-size: 1em;
+    }
+
+    .question-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .question-footer {
+        flex-direction: column; /* Stack nav and action buttons */
+        align-items: stretch; /* Make them full width */
+        gap: 20px;
+    }
+
+    .question-nav, .action-buttons {
+        justify-content: space-between; /* Space out buttons */
+        width: 100%;
+    }
+
+    .action-buttons {
+        justify-content: flex-end; /* Align action buttons to the right */
+    }
+
+    .action-buttons .action-button, 
+    .question-nav .nav-button {
+        flex-grow: 1; /* Allow buttons to grow */
+        text-align: center;
+        justify-content: center; /* Center icon and text */
+    }
+
+    /* Make only Next/Prev buttons share the space */
+    .question-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .results-header h2 {
+        font-size: 1.5em;
+    }
+
+    .results-item .question-text {
+        font-size: 1.1em;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .action-buttons {
+        flex-direction: column; /* Stack all action buttons vertically */
+        align-items: stretch;
+    }
+
+    #clear-btn, .calc-btn, .solution-btn {
+        margin-right: 0;
+        margin-bottom: 10px; /* Add margin between stacked buttons */
+    }
+    .action-buttons .submit-btn {
+        margin-top: 10px;
+    }
+
+    .option-item {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    .option-item input[type="radio"],
+    .option-item input[type="checkbox"] {
+        margin-right: 10px;
+    }
+}
