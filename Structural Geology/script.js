@@ -505,14 +505,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         solutionDisplayContainer.innerHTML = prewrittenHtml + loadingMessage;
 
+        // ✅ Helper: convert image to base64
+        async function toBase64(url) {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
+            const blob = await response.blob();
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result.split(",")[1]); // base64 only
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
+            });
+        }
+
         try {
+            let imageBase64 = null;
+            if (q.image_url) {
+                try {
+                    imageBase64 = await toBase64(q.image_url);
+                } catch (err) {
+                    console.error("Image conversion failed:", err);
+                }
+            }
+
             // ✅ Call your backend, not Gemini directly
             const response = await fetch("https://backend-server-pk7h.onrender.com/api/solution", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     prompt: `Provide a detailed, step-by-step solution...\n\nQuestion:\n${q.question}\n\nOptions:\n${q.options ? q.options.map(opt => `(${opt.label}) ${opt.text}`).join('\n') : 'This is a numeric answer question.'}`,
-                    imageUrl: q.image_url ? q.image_url : null
+                    imageData: imageBase64
                 })
             });
 
@@ -545,6 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched.</p>';
         }
     };
+
 
     
     const downloadSolutions = () => {
