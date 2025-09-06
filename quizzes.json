@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Common Section",
+        "description": "A quiz on the topic of Common Section.",
+        "path": "Common Section/"
+    },
+    {
+        "title": "Geological Time Scale",
+        "description": "A quiz on the topic of Geological Time Scale.",
+        "path": "geological time scale/"
+    },
+    {
+        "title": "Geology All",
+        "description": "A quiz on the topic of Geology All.",
+        "path": "Geology All/"
+    },
+    {
+        "title": "Structural Geology",
+        "description": "A quiz on the topic of Structural Geology.",
+        "path": "Structural Geology/"
+    }
+]
