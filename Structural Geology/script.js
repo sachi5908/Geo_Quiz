@@ -364,16 +364,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         const userAnswers = JSON.parse(answeredValue);
                         const correctAnswers = answerData.answer;
 
-                        // Sort both arrays to compare them for an exact match, regardless of selection order.
                         const userAnswersSortedStr = JSON.stringify(userAnswers.sort());
                         const correctAnswersSortedStr = JSON.stringify(correctAnswers.sort());
 
                         if (userAnswersSortedStr === correctAnswersSortedStr) {
-                            points = 2; // Award full marks only for a perfect match
+                            points = 2;
                             status = 'Correct!';
                             userClass = 'result-correct';
                         } else {
-                            points = 0; // No partial credit and no negative marks
+                            points = 0;
                             status = 'Incorrect.';
                         }
                     }
@@ -507,8 +506,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         solutionDisplayContainer.innerHTML = prewrittenHtml + loadingMessage;
         
-        loaderOverlay.classList.remove('hidden'); // Show loader for AI fetch
-
         async function imageToObject(url) {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
@@ -571,8 +568,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Error fetching solution:", error);
             solutionDisplayContainer.innerHTML =
                 prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched.</p>';
-        } finally {
-            loaderOverlay.classList.add('hidden'); // Hide loader after AI fetch
         }
     };
     
