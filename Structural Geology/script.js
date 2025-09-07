@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Element Selectors ---
+    const loaderOverlay = document.getElementById('loader-overlay'); // Get the loader
     const quizContent = document.getElementById('quiz-content');
     const resultsContent = document.getElementById('results-content');
     const questionNumberDiv = document.getElementById('question-number');
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const loadQuiz = async () => {
+        loaderOverlay.classList.remove('hidden'); // Show loader
         try {
             quizData = await loadJSON('quiz_data.json');
             quizAnswers = await loadJSON('quiz_answers.json');
@@ -116,6 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error loading quiz data:', error);
             if (quizDiv) quizDiv.innerHTML = '<p class="result-incorrect">Failed to load quiz data.</p>';
+        } finally {
+            loaderOverlay.classList.add('hidden'); // Hide loader
         }
     };
 
@@ -463,10 +467,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loadQuiz();
     };
 
-    // In script.js
-
-    // ... (keep the rest of the file the same)
-
     const fetchSolution = async () => {
         const questionId = quizData[currentQuestionIndex].id;
         const solutionsCache = JSON.parse(localStorage.getItem('solutionsCache')) || {};
@@ -506,8 +506,9 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingMessage = '<p>Fetching solution from AI, please wait...</p>';
         }
         solutionDisplayContainer.innerHTML = prewrittenHtml + loadingMessage;
+        
+        loaderOverlay.classList.remove('hidden'); // Show loader for AI fetch
 
-        // ✅ MODIFICATION 1: Update the toBase64 helper function
         async function imageToObject(url) {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
@@ -515,7 +516,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onloadend = () => {
-                    // Return an object with both mimeType and the base64 data
                     resolve({
                         mimeType: blob.type,
                         data: reader.result.split(",")[1]
@@ -527,23 +527,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            let imagePayload = null; // Will hold the object { mimeType, data }
+            let imagePayload = null;
             if (q.image_url) {
                 try {
-                    // ✅ MODIFICATION 2: Call the updated helper function
                     imagePayload = await imageToObject(q.image_url);
                 } catch (err) {
                     console.error("Image conversion failed:", err);
                 }
             }
 
-            // ✅ MODIFICATION 3: Send the image payload object to the backend
             const response = await fetch("https://backend-server-pk7h.onrender.com/api/solution", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     prompt: `Provide a detailed, step-by-step solution...\n\nQuestion:\n${q.question}\n\nOptions:\n${q.options ? q.options.map(opt => `(${opt.label}) ${opt.text}`).join('\n') : 'This is a numeric answer question.'}`,
-                    image: imagePayload // Send the entire object
+                    image: imagePayload
                 })
             });
 
@@ -552,7 +550,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`Backend request failed: ${errorBody}`);
             }
             
-            // ... (the rest of the function remains the same)
             const data = await response.json();
             const solutionText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No AI response.";
 
@@ -574,12 +571,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Error fetching solution:", error);
             solutionDisplayContainer.innerHTML =
                 prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched.</p>';
+        } finally {
+            loaderOverlay.classList.add('hidden'); // Hide loader after AI fetch
         }
     };
-
-    // ... (keep the rest of the file the same)
-
-
     
     const downloadSolutions = () => {
         // ... (This function is unchanged from the previous version)
