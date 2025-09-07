@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestionIndex = 0;
     let visitedQuestions = new Set();
     let answeredQuestions = new Set();
-    let timeLimitMinutes = 60;
+    let timeLimitMinutes = 180;
     let timeRemaining = timeLimitMinutes * 60;
     let timerInterval;
 
@@ -587,3 +587,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initial Load ---
     loadQuiz();
 });
+
