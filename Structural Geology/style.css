@@ -3,7 +3,7 @@ body {
     background-color: #f0f2f5;
     margin: 0;
     padding: 0;
-    line-height: 1.6; /* Add for better readability */
+    line-height: 1.6;
 }
 
 .exam-header {
@@ -37,7 +37,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    position: relative; /* Added for loader positioning */
+    position: relative;
 }
 
 .quiz-content {
@@ -90,14 +90,13 @@ body {
     flex: 3;
     padding: 40px;
     border-right: 1px solid #e0e0e0;
-    display: flex; /* ADDED: Makes this a flex container */
-    flex-direction: column; /* ADDED: Stacks children vertically */
+    display: flex;
+    flex-direction: column;
 }
 
-/* NEW RULE: This wrapper will hold the dynamic content */
 .question-body-wrapper {
-    flex-grow: 1; /* ADDED: Makes this element grow to fill available space */
-    min-height: 350px; /* ADDED: Prevents the container from becoming too short */
+    flex-grow: 1;
+    min-height: 350px;
 }
 
 .question-header {
@@ -105,8 +104,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-    gap: 10px; /* Add gap for wrapped items */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .question-text {
@@ -121,7 +120,7 @@ body {
     background-color: #f0f2f5;
     padding: 5px 10px;
     border-radius: 5px;
-    white-space: nowrap; /* Prevent ugly wrapping */
+    white-space: nowrap;
 }
 
 .question-section p {
@@ -133,13 +132,15 @@ body {
 .question-image-container {
     margin: 20px 0;
     text-align: center;
+    position: relative; /* ADDED: For positioning the loader */
+    min-height: 50px; /* ADDED: Ensures container has height for loader to show */
 }
 
 .question-image {
-    max-width: 70%; /* Ensures image is never wider than its container */
-    height: auto;    /* Maintains aspect ratio */
-    display: block;  /* Removes extra space below image, helps with centering */
-    margin: 0 auto;  /* Centers the image if it's smaller than max-width */
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 8px;
     border: 1px solid #ddd;
 }
@@ -151,11 +152,36 @@ body {
     font-style: italic;
 }
 
+/* --- NEW RULES FOR IMAGE LOADER --- */
+.image-loader {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none; /* Hidden by default */
+}
+
+.question-image-container.loading .image-loader {
+    display: block; /* Show loader when container has .loading class */
+}
+
+.question-image-container.loading .question-image {
+    visibility: hidden; /* Hide image but keep its space while loading */
+}
+/* --- END OF NEW RULES --- */
+
 .status-pane {
     flex: 1;
     background-color: #f9f9f9;
     padding: 30px;
-    min-width: 280px; /* Give it a min-width to prevent squishing */
+    min-width: 280px;
 }
 
 .status-legend {
@@ -163,7 +189,7 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 20px;
-    justify-content: center; /* Center legend items */
+    justify-content: center;
 }
 
 .legend-item {
@@ -209,7 +235,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
-    display: flex; /* center number */
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -255,9 +281,9 @@ body {
 .numeric-input {
     padding: 12px;
     font-size: 1.1em;
-    width: 100%; /* Make it full width of its container */
-    max-width: 250px; /* but not too wide */
-    box-sizing: border-box; /* Include padding in width */
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 10px;
@@ -270,8 +296,8 @@ body {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #e0e0e0;
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 15px; /* Add gap */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .question-nav {
@@ -305,8 +331,8 @@ body {
 .action-buttons {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Allow buttons to wrap */
-    gap: 10px; /* Add gap between buttons */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .action-buttons .action-button {
@@ -357,8 +383,8 @@ body {
     margin-top: 20px;
     border-collapse: collapse;
     font-size: 1em;
-    overflow-x: auto; /* Allow horizontal scrolling on small screens */
-    display: block; /* Required for overflow-x to work on tables */
+    overflow-x: auto;
+    display: block;
 }
 
 .match-table th, 
@@ -434,36 +460,34 @@ body {
 
 /* --- Responsive Design --- */
 
-/* Medium screens (tablets) */
 @media (max-width: 992px) {
     .quiz-content {
-        flex-direction: column; /* Stack panes vertically */
+        flex-direction: column;
     }
 
     .question-pane {
-        border-right: none; /* Remove side border */
-        border-bottom: 1px solid #e0e0e0; /* Add bottom border */
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
     }
 
     .status-pane {
-        min-width: auto; /* Reset min-width */
+        min-width: auto;
     }
 }
 
-/* Small screens (mobile phones) */
 @media (max-width: 768px) {
     .exam-container {
-        margin: 10px; /* Reduce margin */
-        border-radius: 0; /* Full-width on mobile */
+        margin: 10px;
+        border-radius: 0;
     }
 
     .question-pane, .status-pane, .results-content {
-        padding: 20px; /* Reduce padding */
+        padding: 20px;
     }
 
     .exam-header {
         padding: 10px 15px;
-        flex-direction: column; /* Stack header items */
+        flex-direction: column;
         align-items: flex-start;
         gap: 5px;
     }
@@ -482,28 +506,27 @@ body {
     }
 
     .question-footer {
-        flex-direction: column; /* Stack nav and action buttons */
-        align-items: stretch; /* Make them full width */
+        flex-direction: column;
+        align-items: stretch;
         gap: 20px;
     }
 
     .question-nav, .action-buttons {
-        justify-content: space-between; /* Space out buttons */
+        justify-content: space-between;
         width: 100%;
     }
 
     .action-buttons {
-        justify-content: flex-end; /* Align action buttons to the right */
+        justify-content: flex-end;
     }
 
     .action-buttons .action-button, 
     .question-nav .nav-button {
-        flex-grow: 1; /* Allow buttons to grow */
+        flex-grow: 1;
         text-align: center;
-        justify-content: center; /* Center icon and text */
+        justify-content: center;
     }
 
-    /* Make only Next/Prev buttons share the space */
     .question-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -518,16 +541,15 @@ body {
     }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
     .action-buttons {
-        flex-direction: column; /* Stack all action buttons vertically */
+        flex-direction: column;
         align-items: stretch;
     }
 
     #clear-btn, .calc-btn, .solution-btn {
         margin-right: 0;
-        margin-bottom: 10px; /* Add margin between stacked buttons */
+        margin-bottom: 10px;
     }
     .action-buttons .submit-btn {
         margin-top: 10px;
@@ -563,8 +585,8 @@ body {
 .loader-spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid #f3f3f3; /* Light grey circle */
-    border-top: 5px solid #007bff; /* Blue spinner part */
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -573,4 +595,3 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
