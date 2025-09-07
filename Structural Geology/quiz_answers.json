@@ -1,51 +1,39 @@
 {
-  "q99-0": {
-    "answer": "a",
-    "explanation": "In Anderson's theory of faulting, a normal fault regime is characterized by the maximum principal stress ($\\sigma_1$) being vertical, while the intermediate ($\\sigma_2$) and minimum ($\\sigma_3$) principal stresses are horizontal. The provided stereographic projection shows $\\sigma_1$ at the center, which represents a vertical orientation, thus indicating a normal fault."
-  },
   "q146-0": {
     "answer": "d",
-    "explanation": "A knickpoint is a sharp break of slope in the longitudinal profile of a river, often seen as a waterfall or rapids. It represents an abrupt change in the stream's gradient, typically caused by factors like tectonic uplift, a drop in sea level, or a change in the resistance of the underlying rock."
-  },
-  "q86-0": {
-    "answer": "d",
-    "explanation": "In a stereographic projection: A pole at the center (point 1) represents a horizontal plane. A pole on the primitive circle (point 2) represents a vertical plane. A pole inside the circle (point 3) represents an inclined plane. Pole 2 is on the east side, meaning the vertical plane strikes North-South. Pole 3 is on the North-South axis, meaning its plane strikes East-West. Therefore, the statement that the plane for pole 2 is vertical and the plane for pole 3 strikes E-W is correct."
+    "explanation": "Knickpoints are abrupt changes in the longitudinal profile of a stream, representing a sharp steepening of the stream gradient. They are typically formed by river rejuvenation due to factors like tectonic uplift or a fall in base level."
   },
   "q121-0": {
     "answer": "b",
-    "explanation": "Slickensides are linear grooves on a fault surface that indicate the direction of movement. If the slickensides are horizontal, it means the fault blocks moved past each other horizontally, parallel to the strike of the fault. This type of motion defines a strike-slip fault."
+    "explanation": "Slickensides are striations on a fault surface that indicate the direction of relative movement. Horizontal slickensides mean the movement was parallel to the strike of the fault, which is the definition of a strike-slip fault."
   },
   "q2-0": {
     "answer": "c",
-    "explanation": "For a dipping bed on a flat horizontal surface, the true thickness (T) is calculated from the outcrop width (W) and the dip angle ($\\delta$) using the formula $T = W \\times \\sin(\\delta)$. Given W = 20 m and $\\delta = 30^\\circ$, the true thickness is $20 \\times \\sin(30^\\circ) = 20 \\times 0.5 = 10$ m."
+    "explanation": "For a dipping bed on a flat, horizontal surface, the true thickness (T) is calculated using the formula T = W × sin(θ), where W is the outcrop width and θ is the dip angle. Given W = 20 m and θ = 30°, the calculation is T = 20 × sin(30°) = 20 × 0.5 = 10 m."
   },
   "q20-0": {
     "answer": "b",
-    "explanation": "The mean palaeocurrent direction is found by calculating the vector mean of the given azimuths. The directions (N350°, N17°, N355°, N355°, N15°, N360°, N350°, N13°, N350°, N355°) are all clustered around North (0°/360°). A formal vector mean calculation results in an azimuth of approximately N359.5°, which is closest to N360°."
+    "explanation": "To find the mean direction from a set of azimuths (palaeocurrent directions), the vector mean should be calculated. The given directions (N350°, N17°, N355°, N15°, etc.) are clustered around North. A vector summation of these directions yields a resultant vector pointing almost due North, corresponding to N360° or N0°."
   },
   "q18-0": {
     "answer": "a",
-    "explanation": "Transposition foliation is a composite fabric formed under high strain. Statement (III) is correct because this foliation develops by rotating original layering to become parallel to the axial planes of tight, isoclinal folds. Statement (II) is incorrect because the process destroys the original stratigraphic sequence. Statement (IV) is incorrect because fold hinges become isolated and are not well identified. Statement (I) is generally incorrect as transposition indicates high strain, which can occur in a single progressive event, not necessarily separate superposed folding events."
+    "explanation": "Analyzing the statements: (I) Transposition indicates intense strain but not necessarily superposed folding. (II) Transposition largely destroys original stratigraphic information. (III) By definition, transposition foliation develops parallel to the axial planes of tight to isoclinal folds. (IV) Fold closures in transposed domains are typically dismembered and difficult to identify, not 'well identified'. Therefore, only statement III is unequivocally correct."
   },
   "q120-0": {
     "answer": "d",
-    "explanation": "The dip ($\\delta$) of a plane is related to the structure contour interval (CI) and the horizontal spacing (horizontal equivalent, HE) by the formula $\\tan(\\delta) = \\frac{\\text{CI}}{\\text{HE}}$. Given that both the CI and HE are 100 m, $\\tan(\\delta) = 100 / 100 = 1$. The angle whose tangent is 1 is $45^\\circ$."
+    "explanation": "The dip angle (θ) can be calculated from the relationship tan(θ) = Contour Interval (CI) / Horizontal Equivalent (HE). Given that CI = 100 m and HE = 100 m, tan(θ) = 100 / 100 = 1. The angle whose tangent is 1 is 45°."
   },
   "q68-0": {
     "answer": "a",
-    "explanation": "At subduction zones, as the oceanic slab descends, increasing pressure and temperature cause water-bearing minerals to release water (dehydration). This water percolates into the overlying hot mantle wedge, lowering its melting point and causing it to melt. This process is called flux melting."
+    "explanation": "In a subduction zone, the descending slab heats up and releases water from hydrated minerals. This water lowers the melting point of the overlying mantle wedge (flux melting), inducing the generation of magma that feeds volcanic arcs. This statement accurately describes a fundamental process of subduction zones."
   },
   "q37-0": {
     "answer": "b",
-    "explanation": "Rake is the angle between the net slip vector and the strike of the fault, measured within the fault plane. A rake of 90° signifies that the slip occurred directly down the dip of the fault plane, perpendicular to the strike. This defines a dip-slip fault (either normal or reverse)."
+    "explanation": "Rake is the angle measured on the fault plane between the strike line and the net slip vector. A rake of 90° signifies that the slip occurred directly down (or up) the dip of the fault plane, which defines a dip-slip fault (i.e., a normal or reverse fault)."
   },
   "q193-0": {
     "answer": "b",
-    "explanation": "A lineation must lie on the plane on which it is observed. The plane given is 210, 40 NW. This means the strike is 210° and the dip is 40° towards the NW. The dip direction is 300°. A lineation on this plane can have a maximum plunge equal to the plane's dip (40°), and this occurs only when the lineation's trend is the same as the dip direction (300°). Option (b), with a plunge of 40° and a trend of 300°, perfectly matches this condition."
-  },
-  "q264-0": {
-    "answer": "a",
-    "explanation": "The outcrop pattern shows rock layers forming a closure or 'nose' which, on a flat surface, indicates a plunging fold. In an antiform, the limbs dip away from the central axial trace. Since the image shows this divergence from an axis, the structure is a plunging antiform."
+    "explanation": "A lineation lies on a plane if its plunge and trend are consistent with the plane's orientation. A lineation that trends in the same direction as the plane's dip will have a plunge equal to the plane's dip. The plane (strike 210°, dip 40° NW) has a dip direction of 300°. The lineation in option (b) has a trend of 300° and a plunge of 40°, so it lies on the plane."
   },
   "q259-0": {
     "answer": [
@@ -53,7 +41,7 @@
       "b",
       "d"
     ],
-    "explanation": "Slope stabilization methods are engineering measures to prevent landslides. Rock bolting (a) anchors unstable rock. Shotcrete (b) is a sprayed concrete cover that prevents weathering and surface failure. Geogrids (d) are synthetic meshes used to reinforce and stabilize soil slopes. An impression packer (c) is a tool for geotechnical investigation (examining fractures in a borehole), not a stabilization method."
+    "explanation": "Slope stabilization methods are engineering techniques used to prevent landslides. Bolting (installing steel rods), application of shotcrete (sprayed concrete), and use of geogrids (reinforcing fabric) are all common stabilization methods. An impression packer is a tool used for geotechnical investigation, not stabilization."
   },
   "q206-0": {
     "answer": [
@@ -61,90 +49,78 @@
       "b",
       "d"
     ],
-    "explanation": "A duplex is a structural feature in fold-thrust belts. It consists of a series of thrust-bounded rock slices called horses (a), which are stacked on top of each other. This entire stack is bounded below by a basal thrust called a floor thrust (d) and above by a single thrust called a roof thrust (b)."
+    "explanation": "A duplex is a tectonic structure in a fold-thrust belt composed of a series of stacked, thrust-bounded rock bodies known as 'horses'. The entire system is bounded by a 'floor thrust' (or sole thrust) at its base and a 'roof thrust' at its top."
   },
   "q227-0": {
     "answer": [
-      "b",
+      "a",
       "c",
       "d"
     ],
-    "explanation": "The M-plane in fault analysis is perpendicular to both the fault plane and the slickenline (slip vector). (b) By definition, the pole to the M-plane must be parallel to the slickenline. (c) The slickenline lies within the fault plane, and any line within a plane is perpendicular to the pole of that plane. (d) Since the M-plane pole is the slickenline direction, and slickenlines are features on the fault plane, the pole direction lies within the fault plane."
+    "explanation": "The M-plane is a reference plane perpendicular to the fault plane and containing the slickenline (slip vector). (a) The pole to the M-plane is perpendicular to the M-plane and thus perpendicular to the slickenline. (c, d) Because the M-plane is perpendicular to the fault plane, its pole must lie on the fault plane and be perpendicular to the fault plane's pole."
   },
   "q279-0": {
     "answer": "5.6",
-    "explanation": "For normal faulting under Anderson's theory, the maximum principal stress ($\\sigma_1$) is vertical and equals the lithostatic pressure ($\\rho g z$). Given $\\sigma_1 = 150 \\text{ MPa} = 150 \\times 10^6 \\text{ Pa}$, density $\\rho = 2700 \\text{ kg/m}^3$, and gravity $g = 10 \\text{ m/s}^2$. We can solve for depth $z$: $z = \\frac{\\sigma_1}{\\rho g} = \\frac{150 \\times 10^6}{2700 \\times 10} = 5555.55... \\text{ m}$. Converting to kilometers and rounding to one decimal place gives 5.6 km."
+    "explanation": "In Anderson's theory for normal faulting, the maximum principal stress (σ₁) is vertical and equal to the lithostatic pressure (ρgz). Given σ₁ = 150 MPa, ρ = 2700 kg/m³, and g = 10 m/s², the depth (z) is calculated as z = σ₁ / (ρg) = (150 × 10⁶ Pa) / (2700 kg/m³ × 10 m/s²) = 5555.6 m, which is 5.6 km when rounded to one decimal place."
   },
   "q252-0": {
     "answer": "a",
-    "explanation": "In ripples and dunes formed by a unidirectional current, the sediment moves up the gentle stoss side and avalanches down the steeper lee side (or slip face). Therefore, the lee side always dips in the direction of the current flow. Since the lee side dips towards N10W, the water was flowing towards N10W."
-  },
-  "q217-0": {
-    "answer": "a",
-    "explanation": "The fold is an antiform because it is an upward-closing (arch-like) structure. It is an anticline because the oldest stratigraphic unit (1) is in the core. The fold is asymmetric, with its axial plane dipping to the west and its eastern limb being steeper. This geometry indicates vergence, or tectonic transport, towards the east. In this context, 'facing' refers to the direction of vergence. Thus, it is an antiform facing east."
+    "explanation": "In asymmetrical ripples formed by a unidirectional current, the steeper lee side faces downstream. The dip direction of the cross-bedding on the lee side directly records the direction of the current flow. Therefore, a dip direction of N10°W indicates a flow direction towards N10°W."
   },
   "q291-0": {
     "answer": "c",
-    "explanation": "The true dip of a geological plane is its maximum angle of inclination, measured on a vertical plane that is perpendicular to the strike. An apparent dip is the angle of inclination measured on any vertical plane that is not perpendicular to the strike. Since the E-W trending quarry wall is not perpendicular to the NE-striking dikes, the angle observed on the wall is an apparent dip."
-  },
-  "q307-0": {
-    "answer": "d",
-    "explanation": "The geological map for this question is not provided. However, a map representing an anticline would show rock layers arranged symmetrically about an axial trace, with the strata on both limbs dipping away from the axis. If the basalt represents older basement rock exposed in the core of the fold by erosion, with younger sedimentary rocks on the limbs, this option would be the correct description."
+    "explanation": "True dip is the angle of a plane measured in a vertical section perpendicular to its strike. An apparent dip is the angle measured in any vertical section not perpendicular to strike. Since the quarry wall (E-W) is not perpendicular to the strike of the dikes (NE-striking), the observed angle is an apparent dip."
   },
   "q284-0": {
     "answer": "d",
-    "explanation": "A chevron fold is defined by its distinctive zigzag pattern, which results from having straight limbs and sharp, angular hinges. This contrasts with other fold types that typically have rounded hinges."
-  },
-  "q322-0": {
-    "answer": "c",
-    "explanation": "The sequence from oldest to youngest is determined by stratigraphic principles. 1) Layers F, E, and D were deposited in order (Superposition). 2) Feature H (a thin dike) cut through them (Cross-cutting). 3) Dike G then cut through layers F, E, D and also dike H, making G younger than H (Cross-cutting). 4) An unconformity (erosion) truncated D, H, and G. 5) C, B, and A were deposited on top of this surface in that order (Superposition). This gives the sequence: F, E, D, H, G, C, B, A."
+    "explanation": "A chevron fold is characterized by straight limbs and sharp, angular hinges, giving it a zigzag or V-shaped profile. This contrasts with folds that have rounded hinges."
   },
   "q333-0": {
     "answer": "18.4",
-    "explanation": "The true displacement (net slip) on a fault is the vector sum of its orthogonal components. Assuming heave (horizontal, dip-perpendicular), throw (vertical), and strike-slip are these components, the magnitude is found using the 3D Pythagorean theorem: Net Slip = $\\sqrt{(\\text{heave})^2 + (\\text{throw})^2 + (\\text{strike-slip})^2}$. Plugging in the values: Net Slip = $\\sqrt{5^2 + 12^2 + 13^2} = \\sqrt{25 + 144 + 169} = \\sqrt{338} \\approx 18.38$ m. Rounded to one decimal place, this is 18.4 m."
+    "explanation": "The true displacement (net slip) is the vector sum of its three orthogonal components: strike-slip, heave (horizontal dip component), and throw (vertical dip component). Using the 3D Pythagorean theorem: Net Slip = √(strike-slip² + heave² + throw²) = √(13² + 5² + 12²) = √(169 + 25 + 144) = √338 ≈ 18.4 m."
   },
   "q459-hz3": {
     "answer": "b",
-    "explanation": "A diapiric fold is created by the upward movement of a buoyant, mobile material that pierces through overlying rock layers. While this material is often salt, it can also be magma. A granitic pluton rising through the crust, for example, would create a diapiric structure and is directly related to magmatic activity."
+    "explanation": "A diapiric fold (diapir) is formed by the upward piercing movement of a mobile and ductile material, such as salt, mud, or magma, through overlying denser rock layers. Gneiss domes are an example associated with magmatic or high-grade metamorphic cores."
   },
   "q485-hz3": {
     "answer": "d",
-    "explanation": "Drag folds are minor folds that form in a relatively weak (incompetent) layer that is sandwiched between two stronger (competent) layers. When the stronger layers shear past each other, they 'drag' the weaker layer, causing it to deform into small folds."
+    "explanation": "Drag folds are minor folds that typically form in a less competent (weaker) rock unit situated between two more competent (stronger) units. They are caused by the shearing force (drag) between the competent layers as they slip past one another during larger-scale folding."
   },
   "q724-hz3": {
     "answer": "c",
-    "explanation": "The terms are defined by geometry (form) or stratigraphy (age). (C) Antiform: An upward-closing fold (I). (D) Synform: A downward-closing fold (II). (B) Anticline: A fold with the oldest rocks in the core (III). (A) Syncline: A fold with the youngest rocks in the core (IV). The correct matching is therefore A-IV, B-III, C-I, D-II."
+    "explanation": "Definitions: (A) Syncline has the youngest rocks in the core (IV). (B) Anticline has the oldest rocks in the core (III). (C) Antiform is a fold that closes upward (I). (D) Synform is a fold that closes downward (II). The correct matching is A-IV, B-III, C-I, D-II."
   },
   "q964-hz3": {
     "answer": "d",
-    "explanation": "Net slip is the true displacement vector between two formerly adjacent points on a fault. Separation is the apparent offset of a marker bed measured in a specific direction. The net slip represents the shortest possible distance of displacement. Any other measurement of offset (separation) will, by geometry, be either greater than or equal to the net slip. Therefore, the magnitude of net slip is less than or equal to the magnitude of separation."
+    "explanation": "Net slip is the actual total displacement vector on a fault plane. Separation is the apparent displacement of a feature, measured in a specific direction (e.g., vertical separation is throw). Separation is a projection of the net slip vector, and its magnitude can therefore only be less than or equal to the magnitude of the net slip."
   },
   "q144-hz3": {
     "answer": "d",
-    "explanation": "The rate of sediment accumulation is primarily controlled by the proximity to a sediment source, mainly rivers carrying terrigenous material from continents. Continental shelves, slopes, and rises are all relatively close to these sources. The deep-ocean floor (abyssal plains) is the farthest from land and receives only very fine, slow-settling particles (pelagic clays and organic oozes), resulting in extremely low accumulation rates."
+    "explanation": "The deep-ocean floor (abyssal plains) is far from terrestrial sediment sources. Sedimentation rates are extremely low, dominated by the slow settling of fine pelagic clays and the microscopic skeletons of marine organisms. Continental shelves, slopes, and rises all receive much higher volumes of terrigenous sediment."
   },
   "q477-hz3": {
     "answer": "b",
-    "explanation": "Strike-slip faults are common in both environments. In oceanic settings, they are fundamental features known as transform faults, which offset mid-ocean ridge segments. In continental settings, they form major fault systems, such as the San Andreas Fault in California or the North Anatolian Fault in Turkey."
+    "explanation": "Strike-slip faults are fundamental structures that accommodate horizontal motion in both oceanic and continental crust. In oceanic settings, they manifest as transform faults offsetting mid-ocean ridges. In continental settings, they form major fault systems like the San Andreas Fault."
   },
   "q468-hz3": {
     "answer": "a",
-    "explanation": "A monocline is a single, localized, step-like bend in otherwise horizontal or gently dipping rock layers. This geometry fits the description of a 'localized warping' of strata. It is often caused by faulting in the deeper basement rock that does not propagate to the surface."
+    "explanation": "A monocline is a step-like fold that represents a localized zone of steeper dip within otherwise horizontal or gently dipping strata. It is essentially a localized warp or bend, often caused by faulting at depth."
   },
   "q726-hz3": {
     "answer": "a",
-    "explanation": "An unconformity represents a period of either erosion or non-deposition, resulting in a gap in the geologic time record at that location. This missing interval of time is called a hiatus."
+    "explanation": "A hiatus is the stratigraphic term for the interval of geologic time missing at an unconformity, representing the period of non-deposition and/or erosion. Hade, throw, and heave are terms related to the geometry of faults."
   },
   "q644-hz3": {
     "answer": "c",
-    "explanation": "This question refers to the Dunham classification for carbonate rocks. A rock that is grain-supported (the grains touch and support each other) but also contains carbonate mud in the spaces between the grains is called a packstone. In contrast, a wackestone is mud-supported, and a grainstone is grain-supported but lacks mud."
+    "explanation": "According to the Dunham classification for carbonate rocks, a packstone is defined as a grain-supported rock that contains intergranular carbonate mud. A grainstone is also grain-supported but lacks mud, while a wackestone is mud-supported."
   },
   "q1064-hz3": {
     "answer": "d",
-    "explanation": "The strain ellipsoid describes the deformation of rock, with axes X (maximum elongation), Y (intermediate), and Z (maximum shortening). Foliation is a planar fabric (like cleavage or schistosity) formed by the alignment of minerals perpendicular to the direction of maximum shortening (the Z-axis). The plane perpendicular to the Z-axis is the XY plane. Therefore, foliation is parallel to the XY plane of the strain ellipsoid."
+    "explanation": "The strain ellipsoid describes rock deformation, with axes X > Y > Z representing maximum extension, intermediate, and maximum shortening, respectively. Foliation (e.g., cleavage, schistosity) is a planar fabric that develops perpendicular to the direction of maximum shortening (the Z-axis). This plane of flattening is the XY plane of the strain ellipsoid."
   },
   "q708-hz3": {
     "answer": "a",
-    "explanation": "This question refers to the Ramsay classification of folds. Class 1B folds are also known as parallel folds, meaning the layer thickness remains constant when measured perpendicular to the bedding. For a layer to maintain constant thickness as it bends, the inner arc must have a tighter curve (a smaller radius of curvature) than the outer arc. Since curvature is inversely proportional to the radius, the inner arc has a greater curvature than the outer arc."
+    "explanation": "This refers to the Ramsay classification of folds. Class 1B folds are parallel folds, where layer thickness measured perpendicular to bedding is constant. To maintain this constant thickness, the inner arc must be more sharply curved than the outer arc. A higher curvature corresponds to a smaller radius. Thus, the curvature of the outer arc is less than that of the inner arc."
   }
 }
