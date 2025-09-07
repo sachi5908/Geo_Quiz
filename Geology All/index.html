@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="exam-header">
+        <div class="header-left">
+            <h1 class="exam-title">Geo Quiz</h1>
+        </div>
+        <div class="header-right">
+            <div id="timer" class="timer">Time Left: 180:00</div>
+        </div>
+    </div>
+
+    <div class="exam-container">
+        <div id="loader-overlay" class="loader-overlay hidden">
+            <div class="loader-spinner"></div>
+        </div>
+        <div id="quiz-content" class="quiz-content">
+            <div class="question-pane">
+                <div class="question-header">
+                    <div id="question-number" class="question-text"></div>
+                    <div id="question-meta" class="question-meta"></div>
+                </div>
+                
+                <div class="question-body-wrapper">
+                    <div id="quiz-question" class="question-section"></div>
+                    <div id="quiz-options" class="options-section"></div>
+                </div>
+                <div class="question-footer">
+                    <div class="question-nav">
+                        <button id="prev-btn" class="nav-button">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <button id="next-btn" class="nav-button">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="calc-btn" class="action-button calc-btn">Calculator</button>
+                        <button id="view-solution-btn" class="action-button solution-btn">View Solution</button>
+                        <button id="clear-btn" class="action-button">Clear Response</button>
+                        <button id="submit" class="action-button submit-btn">Submit Quiz</button>
+                    </div>
+                </div>
+
+                <div id="solution-display" class="solution-container hidden"></div>
+
+            </div>
+
+            <div class="status-pane">
+                <div class="status-legend">
+                    <div class="legend-item"><span class="legend-color legend-answered"></span> Answered</div>
+                    <div class="legend-item"><span class="legend-color legend-not-answered"></span> Not Answered</div>
+                    <div class="legend-item"><span class="legend-color legend-visited"></span> Not Visited</div>
+                </div>
+                <h3>Question Palette</h3>
+                <div id="quiz-nav" class="quiz-nav"></div>
+            </div>
+        </div>
+
+        <div id="results-content" class="results-content hidden">
+            <div id="results-header" class="results-header">
+                <h2 id="final-score"></h2>
+            </div>
+            <div id="results" class="results-container"></div>
+            <button id="retake-btn" class="action-button retake-btn">Retake Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
