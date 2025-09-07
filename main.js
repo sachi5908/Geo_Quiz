@@ -1,7 +1,8 @@
 // File: main.js
 document.addEventListener('DOMContentLoaded', async () => {
     const quizContainer = document.getElementById('quiz-list-container');
-    if (!quizContainer) return;
+    const loader = document.getElementById('loader'); // Get the loader element
+    if (!quizContainer || !loader) return;
 
     // Asynchronously fetch the quiz data from our JSON file
     async function loadQuizzes() {
@@ -15,6 +16,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         } catch (error) {
             console.error("Could not load quizzes:", error);
             quizContainer.innerHTML = `<p class="error-message">Error: Could not load the quiz list. Please run the Python script to generate it.</p>`;
+        } finally {
+            // This block runs whether the try succeeds or fails
+            loader.style.opacity = '0'; // Fade out the loader
+            // Wait for the transition to finish before setting display to none
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 300);
         }
     }
 
