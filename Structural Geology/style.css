@@ -90,6 +90,14 @@ body {
     flex: 3;
     padding: 40px;
     border-right: 1px solid #e0e0e0;
+    display: flex; /* ADDED: Makes this a flex container */
+    flex-direction: column; /* ADDED: Stacks children vertically */
+}
+
+/* NEW RULE: This wrapper will hold the dynamic content */
+.question-body-wrapper {
+    flex-grow: 1; /* ADDED: Makes this element grow to fill available space */
+    min-height: 350px; /* ADDED: Prevents the container from becoming too short */
 }
 
 .question-header {
@@ -128,7 +136,7 @@ body {
 }
 
 .question-image {
-    max-width: 70%; /* Ensures image is never wider than its container */
+    max-width: 100%; /* Ensures image is never wider than its container */
     height: auto;    /* Maintains aspect ratio */
     display: block;  /* Removes extra space below image, helps with centering */
     margin: 0 auto;  /* Centers the image if it's smaller than max-width */
@@ -565,4 +573,3 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
