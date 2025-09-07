@@ -128,8 +128,10 @@ body {
 }
 
 .question-image {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Ensures image is never wider than its container */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Removes extra space below image, helps with centering */
+    margin: 0 auto;  /* Centers the image if it's smaller than max-width */
     border-radius: 8px;
     border: 1px solid #ddd;
 }
