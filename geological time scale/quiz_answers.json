@@ -1,0 +1,52 @@
+{
+  "q53-0": {
+    "answer": "a",
+    "explanation": "The supercontinent Pangaea began to rift and break apart during the early Mesozoic Era, starting in the Triassic period, approximately 200 million years ago."
+  },
+  "q109-0": {
+    "answer": "b",
+    "explanation": "The first true mammals evolved from their synapsid ancestors in the late Triassic, and the earliest birds evolved from theropod dinosaurs during the Jurassic. Both the Triassic and Jurassic are periods within the Mesozoic Era."
+  },
+  "q96-0": {
+    "answer": "b",
+    "explanation": "The correct chronological matches are: (A) Barail Formation - (V) Oligocene; (B) Ariyalur Formation - (II) Cretaceous; (C) Siwalik rocks - (III) Miocene; (D) Katrol Formation - (I) Jurassic; (E) Cardita beaumoniti beds - (IV) Paleocene; (F) Sylhet Formation - (VI) Eocene."
+  },
+  "q144-0": {
+    "answer": "b",
+    "explanation": "The correct chronological order from oldest to youngest is: (Q) Muth Quartzite (Devonian), (P) Talchir Tillite (Early Permian), (S) Umaria Marine Bed (Early Permian), and (R) Umia Ammonites Bed (Late Jurassic - Early Cretaceous)."
+  },
+  "q93-0": {
+    "answer": "d",
+    "explanation": "The correct basin for each stratigraphic unit is: (A) Neoproterozoic basin - (IV) Chhatisgarh; (B) Kheinjua Formation - (III) Vindhyan; (C) Badami Group - (V) Kaladgi; (D) Sullavai Group - (II) Pranhita-Godavari; (E) Papaghni Group - (I) Cuddapah."
+  },
+  "q34-0": {
+    "answer": "b",
+    "explanation": "The Eparchean unconformity is a major stratigraphic break in the Indian Shield representing a significant time gap. It separates the highly deformed and metamorphosed Archaean crystalline basement from the overlying, less disturbed Proterozoic sedimentary sequences."
+  },
+  "q155-0": {
+    "answer": "a",
+    "explanation": "The Subathu Formation (Eocene) represents the last significant marine sedimentary sequence in the Lesser Himalaya. Younger formations like the Dagshahi and Kasauli are transitional to continental (freshwater), and the Karewa Formation is lacustrine (lake deposits)."
+  },
+  "q17-0": {
+    "answer": "c",
+    "explanation": "The correct sequence from oldest to younger is: P. Sargur Schist (Archaean), Q. Kajrahat Limestone (Proterozoic), S. Umia Ammonite Bed (Mesozoic: Late Jurassic-Early Cretaceous), and R. Cuddalore Sandstone (Cenozoic: Mio-Pliocene)."
+  },
+  "q174-0": {
+    "answer": "d",
+    "explanation": "According to the geological time scale, the approximate durations of the periods are: Cretaceous (~79 million years), Jurassic (~56 million years), Ordovician (~42 million years), and Silurian (~24 million years). The Cretaceous Period has the longest duration among the given options."
+  },
+  "q187-0": {
+    "answer": [
+      "a",
+      "d"
+    ],
+    "explanation": "The Quaternary is the most recent geological period and is divided into two epochs: the Pleistocene Epoch (from about 2.58 million years ago to 11,700 years ago) and the Holocene Epoch (from 11,700 years ago to the present)."
+  },
+  "q287-0": {
+    "answer": [
+      "b",
+      "d"
+    ],
+    "explanation": "The Permian-Triassic (P-T) boundary event was the most severe mass extinction in Earth's history, known as 'The Great Dying.' The Cretaceous-Paleogene (K-Pg) boundary marks the mass extinction that wiped out the non-avian dinosaurs. Both are part of the 'Big Five' mass extinctions."
+  }
+}

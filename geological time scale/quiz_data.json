@@ -1,0 +1,263 @@
+[
+    {
+        "id": "q53-0",
+        "type": "MCQ",
+        "question": "When did the supercontinent Pangaea begin to break up?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Mesozoic"
+            },
+            {
+                "label": "b",
+                "text": "Cenozoic"
+            },
+            {
+                "label": "c",
+                "text": "Palaeozoic"
+            },
+            {
+                "label": "d",
+                "text": "Proterozoic"
+            }
+        ]
+    },
+    {
+        "id": "q109-0",
+        "type": "MCQ",
+        "question": "During which of the following geological eras did birds and mammals first appear on the Earth? (Carry one mark each)",
+        "options": [
+            {
+                "label": "a",
+                "text": "Paleozoic"
+            },
+            {
+                "label": "b",
+                "text": "Mesozoic"
+            },
+            {
+                "label": "c",
+                "text": "Proterozoic"
+            },
+            {
+                "label": "d",
+                "text": "Cenozoic"
+            }
+        ],
+        "appeared_in_year": "2014"
+    },
+    {
+        "id": "q96-0",
+        "type": "Match the Following",
+        "question": "Match the items inGroup Iwith those inGroup II.\n\nList-Ⅰ (Group I ):\n(A) Barail Formation\n(B) Ariyalur Formation\n(C) siwalik rocks\n(D) Katrol Formation\n(E) Cardita beaumoniti beds\n(F) Sylhet Formation\n\nList-Ⅰ (Group II):\n(I) Jurassic\n(II) Cretaceous\n(III) Miocene\n(IV) Paleocene\n(V) Oligocene\n(VI) Eocene",
+        "options": [
+            {
+                "label": "a",
+                "text": "(IV) | (VI) | (V) | (III) | (I) | (II)"
+            },
+            {
+                "label": "b",
+                "text": "(V) | (II) | (III) | (I) | (IV) | (VI)"
+            },
+            {
+                "label": "c",
+                "text": "(V) | (II) | (IV) | (I) | (III) | (VI)"
+            },
+            {
+                "label": "d",
+                "text": "(III) | (IV) | (VI) | (II) | (I) | (V)"
+            }
+        ],
+        "appeared_in_year": "2013"
+    },
+    {
+        "id": "q144-0",
+        "type": "MCQ",
+        "question": "The correct chronological order (older to younger) of the following geological units is\n(P) Talchir Tillite\n(Q) Muth Quartzite\n(R) Umia Ammonites Bed\n(S) Umaria Marine Bed\n(Carry two marks each)",
+        "options": [
+            {
+                "label": "a",
+                "text": "P-R-S-Q"
+            },
+            {
+                "label": "b",
+                "text": "Q-P-S-R"
+            },
+            {
+                "label": "c",
+                "text": "R-Q-P-S"
+            },
+            {
+                "label": "d",
+                "text": "P-Q-R-S"
+            }
+        ],
+        "appeared_in_year": "2014"
+    },
+    {
+        "id": "q93-0",
+        "type": "Match the Following",
+        "question": "Match the following stratigraphic units listed inGroup Iwith the Precambrian basins inGroup II.\n\nList-Ⅰ (Group I):\n(A) Neoproterozoic basin\n(B) Kheinjua Formation\n(C) Badami Group\n(D) Sullavai Group\n(E) Papaghni Group\n\nList-Ⅰ (Group II):\n(I) Cuddapah\n(II) Pranhita-Godavari\n(III) Vindhyan\n(IV) Chhatisgarh\n(V) Kaladgi",
+        "options": [
+            {
+                "label": "a",
+                "text": "(IV) | (III) | (II) | (V) | (I)"
+            },
+            {
+                "label": "b",
+                "text": "(I) | (V) | (II) | (IV) | (III)"
+            },
+            {
+                "label": "c",
+                "text": "(II) | (IV) | (III) | (V) | (I)"
+            },
+            {
+                "label": "d",
+                "text": "(IV) | (III) | (V) | (II) | (I)"
+            }
+        ],
+        "appeared_in_year": "2013"
+    },
+    {
+        "id": "q34-0",
+        "type": "MCQ",
+        "question": "Eparchean unconformity separates geological units of",
+        "options": [
+            {
+                "label": "a",
+                "text": "Archaean from Phanerozoic"
+            },
+            {
+                "label": "b",
+                "text": "Archaean from Proterozoic"
+            },
+            {
+                "label": "c",
+                "text": "Proterozoic from Palaeozoic"
+            },
+            {
+                "label": "d",
+                "text": "Early Archaean from late Archaean"
+            }
+        ]
+    },
+    {
+        "id": "q155-0",
+        "type": "MCQ",
+        "question": "Which one of the following is the youngest marine formation in the Himalaya?\n(Carry two marks each)",
+        "options": [
+            {
+                "label": "a",
+                "text": "Subathu Formation"
+            },
+            {
+                "label": "b",
+                "text": "Karewa Formation"
+            },
+            {
+                "label": "c",
+                "text": "Dagshahi Formation"
+            },
+            {
+                "label": "d",
+                "text": "Kasauli Formation"
+            }
+        ],
+        "appeared_in_year": "2014"
+    },
+    {
+        "id": "q17-0",
+        "type": "MCQ",
+        "question": "Arrange the following formations sequentially from older to younger:\nP. Sargur Schist\nQ. Kajrahat Limestone\nR. Cuddalore Sandstone\nS. Umia Ammonite Bed",
+        "options": [
+            {
+                "label": "a",
+                "text": "Q, S, P, R"
+            },
+            {
+                "label": "b",
+                "text": "P, Q, R, S"
+            },
+            {
+                "label": "c",
+                "text": "P, Q, S, R"
+            },
+            {
+                "label": "d",
+                "text": "P, S, Q, R"
+            }
+        ]
+    },
+    {
+        "id": "q174-0",
+        "type": "MCQ",
+        "question": "Which of the following periods has the longest time duration?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Jurassic"
+            },
+            {
+                "label": "b",
+                "text": "Silurian"
+            },
+            {
+                "label": "c",
+                "text": "Ordovician"
+            },
+            {
+                "label": "d",
+                "text": "Cretaceous"
+            }
+        ],
+        "appeared_in_year": "2018"
+    },
+    {
+        "id": "q187-0",
+        "type": "MCQ",
+        "question": "Which of the following Epochs belong (s) to the Quaternary Period?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Holocene"
+            },
+            {
+                "label": "b",
+                "text": "Pliocene"
+            },
+            {
+                "label": "c",
+                "text": "Miocene"
+            },
+            {
+                "label": "d",
+                "text": "Pleistocene"
+            }
+        ],
+        "appeared_in_year": "2024"
+    },
+    {
+        "id": "q287-0",
+        "type": "MCQ",
+        "question": "Which of the following time boundaries correspond (s) to major mass extinction events?",
+        "options": [
+            {
+                "label": "a",
+                "text": "Precambrian - Cambrian"
+            },
+            {
+                "label": "b",
+                "text": "Permian - Triassic"
+            },
+            {
+                "label": "c",
+                "text": "Paleogene - Neogene"
+            },
+            {
+                "label": "d",
+                "text": "Cretaceous - Paleogene"
+            }
+        ],
+        "appeared_in_year": "2025"
+    }
+]
