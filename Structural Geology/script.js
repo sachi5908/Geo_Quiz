@@ -31,14 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeRemaining = timeLimitMinutes * 60;
     let timerInterval;
 
-    // --- CORRECTED HELPER FUNCTION ---
-    // This function now returns the format your backend API expects: { mimeType, data }
     async function imageToObject(url) {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
         const blob = await response.blob();
-
-        // Special handling for SVGs to convert them to PNG, which is more compatible
         if (blob.type.includes('svg')) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -52,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.drawImage(img, 0, 0);
                         const dataUrl = canvas.toDataURL('image/png');
                         const base64 = dataUrl.split(',')[1];
-                        // Resolve with the correct, simpler object format
                         resolve({ mimeType: 'image/png', data: base64 });
                     };
                     img.onerror = () => reject(new Error('Could not load SVG into image element.'));
@@ -62,12 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.readAsDataURL(blob);
             });
         } else {
-            // Standard handling for other image types (JPG, PNG, GIF)
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onloadend = () => {
                     const base64 = reader.result.split(',')[1];
-                    // Resolve with the correct, simpler object format
                     resolve({ mimeType: blob.type, data: base64 });
                 };
                 reader.onerror = () => reject(new Error('Could not read image blob.'));
@@ -162,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imgContainer.appendChild(imageLoader);
             imgContainer.classList.add('loading');
             const img = document.createElement('img');
-            img.src = q.image_url;
+            img.src = q.image_url.replace(/\\/g, '/'); // Safety check for image path
             img.alt = `Image for question ${currentQuestionIndex + 1}`;
             img.className = 'question-image';
             img.onload = function() {
@@ -527,7 +520,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 let imagePayload = null;
                 if (q.image_url) {
                     try {
-                        imagePayload = await imageToObject(q.image_url); // Use the corrected helper
+                        // FIX: Ensure URL uses forward slashes before fetching
+                        const correctedImageUrl = q.image_url.replace(/\\/g, '/');
+                        imagePayload = await imageToObject(correctedImageUrl);
                     } catch (err) {
                         console.error("Image conversion failed:", err);
                     }
