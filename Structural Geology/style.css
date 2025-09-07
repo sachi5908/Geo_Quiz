@@ -136,7 +136,7 @@ body {
 }
 
 .question-image {
-    max-width: 100%; /* Ensures image is never wider than its container */
+    max-width: 70%; /* Ensures image is never wider than its container */
     height: auto;    /* Maintains aspect ratio */
     display: block;  /* Removes extra space below image, helps with centering */
     margin: 0 auto;  /* Centers the image if it's smaller than max-width */
@@ -573,3 +573,4 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
