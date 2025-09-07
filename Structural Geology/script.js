@@ -151,32 +151,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (q.image_url) {
             const imgContainer = document.createElement('div');
             imgContainer.className = 'question-image-container';
-
-            // Create and add the loader
             const imageLoader = document.createElement('div');
             imageLoader.className = 'image-loader';
             imgContainer.appendChild(imageLoader);
-
-            // Add 'loading' class to the container to show the loader
             imgContainer.classList.add('loading');
-
             const img = document.createElement('img');
             img.src = q.image_url;
             img.alt = `Image for question ${currentQuestionIndex + 1}`;
             img.className = 'question-image';
-
-            // When the image successfully loads
             img.onload = function() {
                 imgContainer.classList.remove('loading');
-                imageLoader.remove(); // Remove the loader from the DOM
+                imageLoader.remove();
             };
-            
-            // When the image fails to load
             img.onerror = function() {
                 imgContainer.classList.remove('loading');
-                imageLoader.remove(); // Remove the loader
-                
-                // Display fallback link
+                imageLoader.remove();
                 this.style.display = 'none';
                 const fallbackLink = document.createElement('a');
                 fallbackLink.href = this.src;
@@ -185,9 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fallbackLink.className = 'image-fallback-link';
                 imgContainer.appendChild(fallbackLink);
             };
-
             imgContainer.appendChild(img);
-
             if (q.image_caption) {
                 const caption = document.createElement('figcaption');
                 caption.className = 'question-caption';
@@ -228,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const optionsList = document.createElement('ul');
             optionsList.classList.add('options-list');
             const inputType = isMsq ? 'checkbox' : 'radio';
-
             q.options.forEach(opt => {
                 const optionItem = document.createElement('li');
                 optionItem.classList.add('option-item');
@@ -386,7 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (answeredValue) {
                         const userAnswers = JSON.parse(answeredValue);
                         const correctAnswers = answerData.answer;
-
                         const userAnswersSortedStr = JSON.stringify(userAnswers.sort());
                         const correctAnswersSortedStr = JSON.stringify(correctAnswers.sort());
 
@@ -513,7 +498,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const max = correctAnswerNum + tolerance;
                 correctAnswerDisplay = `${correctAnswerNum} (Acceptable: ${min.toFixed(3)} to ${max.toFixed(3)})`;
             }
-
             prewrittenHtml = `
                 <div>
                     <h3>Solution from Guide</h3>
@@ -529,75 +513,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         solutionDisplayContainer.innerHTML = prewrittenHtml + loadingMessage;
         
-        async function imageToObject(url) {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
-            const blob = await response.blob();
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                    resolve({
-                        mimeType: blob.type,
-                        data: reader.result.split(",")[1]
-                    });
-                };
-                reader.onerror = reject;
-                reader.readAsDataURL(blob);
-            });
-        }
+        // --- Retry Logic Start ---
+        const maxAttempts = 3;
+        let lastError = null;
 
-        try {
-            let imagePayload = null;
-            if (q.image_url) {
-                try {
-                    imagePayload = await imageToObject(q.image_url);
-                } catch (err) {
-                    console.error("Image conversion failed:", err);
+        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+            try {
+                let imagePayload = null;
+                if (q.image_url) {
+                    try {
+                        imagePayload = await urlToGenerativePart(q.image_url);
+                    } catch (err) {
+                        console.error("Image conversion failed:", err);
+                    }
+                }
+
+                const response = await fetch("https://backend-server-pk7h.onrender.com/api/solution", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        prompt: `Provide a detailed, step-by-step solution...\n\nQuestion:\n${q.question}\n\nOptions:\n${q.options ? q.options.map(opt => `(${opt.label}) ${opt.text}`).join('\n') : 'This is a numeric answer question.'}`,
+                        image: imagePayload
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Attempt ${attempt} failed with status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                const solutionText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No AI response.";
+                const aiSolutionHtml = `
+                    <div>
+                        <hr>
+                        <h3>AI-Generated Solution</h3>
+                        ${solutionText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')}
+                    </div>
+                `;
+
+                const fullSolutionHtml = prewrittenHtml + aiSolutionHtml;
+                solutionDisplayContainer.innerHTML = fullSolutionHtml;
+                solutionsCache[questionId] = fullSolutionHtml;
+                localStorage.setItem('solutionsCache', JSON.stringify(solutionsCache));
+                
+                return; // Exit the function on success
+
+            } catch (error) {
+                lastError = error;
+                console.error(`Attempt ${attempt} of ${maxAttempts} failed:`, error.message);
+
+                if (attempt < maxAttempts) {
+                    solutionDisplayContainer.innerHTML = prewrittenHtml + `<hr><p><em>Request failed. Retrying... (Attempt ${attempt + 1} of ${maxAttempts})</em></p>`;
+                    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds before retrying
                 }
             }
-
-            const response = await fetch("https://backend-server-pk7h.onrender.com/api/solution", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    prompt: `Provide a detailed, step-by-step solution...\n\nQuestion:\n${q.question}\n\nOptions:\n${q.options ? q.options.map(opt => `(${opt.label}) ${opt.text}`).join('\n') : 'This is a numeric answer question.'}`,
-                    image: imagePayload
-                })
-            });
-
-            if (!response.ok) {
-                const errorBody = await response.text();
-                throw new Error(`Backend request failed: ${errorBody}`);
-            }
-            
-            const data = await response.json();
-            const solutionText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No AI response.";
-
-            const aiSolutionHtml = `
-                <div>
-                    <hr>
-                    <h3>AI-Generated Solution</h3>
-                    ${solutionText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')}
-                </div>
-            `;
-
-            const fullSolutionHtml = prewrittenHtml + aiSolutionHtml;
-            solutionDisplayContainer.innerHTML = fullSolutionHtml;
-
-            solutionsCache[questionId] = fullSolutionHtml;
-            localStorage.setItem('solutionsCache', JSON.stringify(solutionsCache));
-
-        } catch (error) {
-            console.error("Error fetching solution:", error);
-            solutionDisplayContainer.innerHTML =
-                prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched.</p>';
         }
+
+        // If the loop finishes without a successful return, all attempts have failed
+        console.error("All fetch attempts failed.", lastError);
+        solutionDisplayContainer.innerHTML =
+            prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched after multiple attempts.</p>';
     };
     
-    const downloadSolutions = () => {
-        // ... (This function is unchanged from the previous version)
-    };
-
     // --- Event Listeners ---
     if (prevBtn) prevBtn.addEventListener('click', prevQuestion);
     if (nextBtn) nextBtn.addEventListener('click', nextQuestion);
