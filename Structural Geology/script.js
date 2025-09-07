@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Element Selectors ---
-    const loaderOverlay = document.getElementById('loader-overlay'); // Get the loader
+    const loaderOverlay = document.getElementById('loader-overlay');
     const quizContent = document.getElementById('quiz-content');
     const resultsContent = document.getElementById('results-content');
     const questionNumberDiv = document.getElementById('question-number');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const loadQuiz = async () => {
-        loaderOverlay.classList.remove('hidden'); // Show loader
+        loaderOverlay.classList.remove('hidden');
         try {
             quizData = await loadJSON('quiz_data.json');
             quizAnswers = await loadJSON('quiz_answers.json');
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading quiz data:', error);
             if (quizDiv) quizDiv.innerHTML = '<p class="result-incorrect">Failed to load quiz data.</p>';
         } finally {
-            loaderOverlay.classList.add('hidden'); // Hide loader
+            loaderOverlay.classList.add('hidden');
         }
     };
 
@@ -151,11 +151,32 @@ document.addEventListener('DOMContentLoaded', () => {
         if (q.image_url) {
             const imgContainer = document.createElement('div');
             imgContainer.className = 'question-image-container';
+
+            // Create and add the loader
+            const imageLoader = document.createElement('div');
+            imageLoader.className = 'image-loader';
+            imgContainer.appendChild(imageLoader);
+
+            // Add 'loading' class to the container to show the loader
+            imgContainer.classList.add('loading');
+
             const img = document.createElement('img');
             img.src = q.image_url;
             img.alt = `Image for question ${currentQuestionIndex + 1}`;
             img.className = 'question-image';
+
+            // When the image successfully loads
+            img.onload = function() {
+                imgContainer.classList.remove('loading');
+                imageLoader.remove(); // Remove the loader from the DOM
+            };
+            
+            // When the image fails to load
             img.onerror = function() {
+                imgContainer.classList.remove('loading');
+                imageLoader.remove(); // Remove the loader
+                
+                // Display fallback link
                 this.style.display = 'none';
                 const fallbackLink = document.createElement('a');
                 fallbackLink.href = this.src;
@@ -164,7 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 fallbackLink.className = 'image-fallback-link';
                 imgContainer.appendChild(fallbackLink);
             };
+
             imgContainer.appendChild(img);
+
             if (q.image_caption) {
                 const caption = document.createElement('figcaption');
                 caption.className = 'question-caption';
@@ -358,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (isMsq) {
                     correctAnswerText = answerData.answer.join(', ').toUpperCase();
-                    points = 0; // Default score is 0 for MSQs
+                    points = 0;
 
                     if (answeredValue) {
                         const userAnswers = JSON.parse(answeredValue);
