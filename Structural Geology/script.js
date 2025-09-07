@@ -31,11 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeRemaining = timeLimitMinutes * 60;
     let timerInterval;
 
-    async function urlToGenerativePart(url) {
+    // --- CORRECTED HELPER FUNCTION ---
+    // This function now returns the format your backend API expects: { mimeType, data }
+    async function imageToObject(url) {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
         const blob = await response.blob();
 
+        // Special handling for SVGs to convert them to PNG, which is more compatible
         if (blob.type.includes('svg')) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -49,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.drawImage(img, 0, 0);
                         const dataUrl = canvas.toDataURL('image/png');
                         const base64 = dataUrl.split(',')[1];
-                        resolve({ inline_data: { mime_type: 'image/png', data: base64 } });
+                        // Resolve with the correct, simpler object format
+                        resolve({ mimeType: 'image/png', data: base64 });
                     };
                     img.onerror = () => reject(new Error('Could not load SVG into image element.'));
                     img.src = reader.result;
@@ -58,11 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.readAsDataURL(blob);
             });
         } else {
+            // Standard handling for other image types (JPG, PNG, GIF)
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onloadend = () => {
                     const base64 = reader.result.split(',')[1];
-                    resolve({ inline_data: { mime_type: blob.type, data: base64 } });
+                    // Resolve with the correct, simpler object format
+                    resolve({ mimeType: blob.type, data: base64 });
                 };
                 reader.onerror = () => reject(new Error('Could not read image blob.'));
                 reader.readAsDataURL(blob);
@@ -513,7 +519,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         solutionDisplayContainer.innerHTML = prewrittenHtml + loadingMessage;
         
-        // --- Retry Logic Start ---
         const maxAttempts = 3;
         let lastError = null;
 
@@ -522,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let imagePayload = null;
                 if (q.image_url) {
                     try {
-                        imagePayload = await urlToGenerativePart(q.image_url);
+                        imagePayload = await imageToObject(q.image_url); // Use the corrected helper
                     } catch (err) {
                         console.error("Image conversion failed:", err);
                     }
@@ -556,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 solutionsCache[questionId] = fullSolutionHtml;
                 localStorage.setItem('solutionsCache', JSON.stringify(solutionsCache));
                 
-                return; // Exit the function on success
+                return;
 
             } catch (error) {
                 lastError = error;
@@ -564,12 +569,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (attempt < maxAttempts) {
                     solutionDisplayContainer.innerHTML = prewrittenHtml + `<hr><p><em>Request failed. Retrying... (Attempt ${attempt + 1} of ${maxAttempts})</em></p>`;
-                    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds before retrying
+                    await new Promise(resolve => setTimeout(resolve, 2000));
                 }
             }
         }
 
-        // If the loop finishes without a successful return, all attempts have failed
         console.error("All fetch attempts failed.", lastError);
         solutionDisplayContainer.innerHTML =
             prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched after multiple attempts.</p>';
