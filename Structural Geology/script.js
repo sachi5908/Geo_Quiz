@@ -463,13 +463,16 @@ document.addEventListener('DOMContentLoaded', () => {
         loadQuiz();
     };
 
+    // In script.js
+
+    // ... (keep the rest of the file the same)
+
     const fetchSolution = async () => {
         const questionId = quizData[currentQuestionIndex].id;
         const solutionsCache = JSON.parse(localStorage.getItem('solutionsCache')) || {};
         const cachedSolution = solutionsCache[questionId];
         solutionDisplayContainer.classList.remove('hidden');
 
-        // ✅ Use cached solution if it exists
         if (cachedSolution) {
             solutionDisplayContainer.innerHTML = cachedSolution;
             return;
@@ -479,7 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let prewrittenHtml = '';
         const prewrittenAnswer = quizAnswers[questionId];
 
-        // ✅ Add prewritten explanation if available
         if (prewrittenAnswer && prewrittenAnswer.explanation) {
             let correctAnswerDisplay = prewrittenAnswer.answer;
             if (q.type === 'Numeric Answer') {
@@ -505,36 +507,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         solutionDisplayContainer.innerHTML = prewrittenHtml + loadingMessage;
 
-        // ✅ Helper: convert image to base64
-        async function toBase64(url) {
+        // ✅ MODIFICATION 1: Update the toBase64 helper function
+        async function imageToObject(url) {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Failed to fetch image: ${url}`);
             const blob = await response.blob();
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result.split(",")[1]); // base64 only
+                reader.onloadend = () => {
+                    // Return an object with both mimeType and the base64 data
+                    resolve({
+                        mimeType: blob.type,
+                        data: reader.result.split(",")[1]
+                    });
+                };
                 reader.onerror = reject;
                 reader.readAsDataURL(blob);
             });
         }
 
         try {
-            let imageBase64 = null;
+            let imagePayload = null; // Will hold the object { mimeType, data }
             if (q.image_url) {
                 try {
-                    imageBase64 = await toBase64(q.image_url);
+                    // ✅ MODIFICATION 2: Call the updated helper function
+                    imagePayload = await imageToObject(q.image_url);
                 } catch (err) {
                     console.error("Image conversion failed:", err);
                 }
             }
 
-            // ✅ Call your backend, not Gemini directly
+            // ✅ MODIFICATION 3: Send the image payload object to the backend
             const response = await fetch("https://backend-server-pk7h.onrender.com/api/solution", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     prompt: `Provide a detailed, step-by-step solution...\n\nQuestion:\n${q.question}\n\nOptions:\n${q.options ? q.options.map(opt => `(${opt.label}) ${opt.text}`).join('\n') : 'This is a numeric answer question.'}`,
-                    imageData: imageBase64
+                    image: imagePayload // Send the entire object
                 })
             });
 
@@ -542,7 +551,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const errorBody = await response.text();
                 throw new Error(`Backend request failed: ${errorBody}`);
             }
-
+            
+            // ... (the rest of the function remains the same)
             const data = await response.json();
             const solutionText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No AI response.";
 
@@ -557,7 +567,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const fullSolutionHtml = prewrittenHtml + aiSolutionHtml;
             solutionDisplayContainer.innerHTML = fullSolutionHtml;
 
-            // ✅ Cache the solution
             solutionsCache[questionId] = fullSolutionHtml;
             localStorage.setItem('solutionsCache', JSON.stringify(solutionsCache));
 
@@ -567,6 +576,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 prewrittenHtml + '<p class="result-incorrect">Sorry, the additional AI details could not be fetched.</p>';
         }
     };
+
+    // ... (keep the rest of the file the same)
 
 
     
